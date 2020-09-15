@@ -11,6 +11,8 @@ class Solution:
 		lowest_time = [-1]*n
 
 		def dfs(current,parent,time):
+			print("IT",initial_time)
+			print("LT",lowest_time)
 			time+=1
 			initial_time[current]=time
 			lowest_time[current]=time
@@ -24,7 +26,10 @@ class Solution:
 				lowest_time[current] = min(lowest_time[nei],lowest_time[current])
 
 		dfs(0,0,0)
+		print("IT",initial_time)
+		print("LT",lowest_time)
 		return ans
 
 obj = Solution()
-print(obj.critical_connections(4,[[0,1],[1,2],[2,0],[1,3]]))
+# print(obj.critical_connections(4,[[0,1],[1,2],[2,0],[1,3]]))
+print(obj.critical_connections(3,[[0,1],[1,2]]))
