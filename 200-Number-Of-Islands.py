@@ -3,6 +3,18 @@ class DSU:
 		self.parent = [i for i in range(n)]
 		self.rank = [-1 for i in range(n)]
 
+	# def find(self,x):
+	# 	while x!=self.parent[x]:
+	# 		x=self.parent[x]
+	# 	return x
+
+	# def union(self,x,y):
+	# 	px = self.find(x)
+	# 	py = self.find(y)
+	# 	if px!=py:
+	# 		self.parent[py]=px
+	# 		return True
+	# 	return False
 	def find(self,x):
 		if x!=self.parent[x]:
 			self.parent[x]=self.find(self.parent[x])
@@ -53,5 +65,8 @@ print(obj.numIslands([
   ["1","1","1","1","0"],
   ["1","1","0","1","0"],
   ["1","1","0","0","0"],
-  ["0","0","0","0","1"]
+  ["0","0","0","0","0"]
 ]))
+# [1,1,0,1] --> [1,0,1]
+# 3 , 2
+# n = 10
