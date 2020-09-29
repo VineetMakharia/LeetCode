@@ -8,7 +8,6 @@ class Solution:
         for price in prices[1:]:
             if price<lowest_price_seen:
                 lowest_price_seen = price
-                continue
             else:
                 profit = price - lowest_price_seen
                 max_profit = max(max_profit,profit)
