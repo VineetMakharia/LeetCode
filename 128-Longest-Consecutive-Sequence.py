@@ -17,9 +17,6 @@ class DSU:
             if rx>ry:
                 self.parent[py]=px
                 self.rank[px]+=self.rank[py]
-            elif ry>rx:
-                self.parent[px]=py
-                self.rank[py]+=self.rank[px]
             else:
                 self.parent[px]=py
                 self.rank[py]+=self.rank[px]
@@ -52,3 +49,4 @@ class Solution:
 
 obj = Solution()
 print(obj.longestConsecutive([100, 4, 200, 1, 3, 2]))
+print(obj.longestConsecutive([1,2,0,1]))

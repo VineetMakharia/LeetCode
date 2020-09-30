@@ -1,7 +1,7 @@
 class DSU:
 	def __init__(self,n):
 		self.parent = [i for i in range(n)]
-		self.rank = [-1 for i in range(n)]
+		self.rank = [1 for i in range(n)]
 		self.count = 0
 		self.isLand = [False for i in range(n)]
 
@@ -13,18 +13,14 @@ class DSU:
 	def union(self,x,y):
 		px = self.find(x)
 		py = self.find(y)
-		rx = self.rank[x]
-		ry = self.rank[y]
-
 		if px==py:
 			return
-		if rx>ry:
+		if self.rank[px]>self.rank[py]:
 			self.parent[py]=px
-		elif ry>rx:
-			self.parent[px]=py
+			self.rank[px]+=self.rank[py]
 		else:
-			self.parent[py]=px
-			self.rank[px]+=1
+			self.parent[px]=py
+			self.rank[py]+=self.rank[px]
 		self.count-=1
 
 	def addLand(self,x):
