@@ -8,7 +8,6 @@ class Solution:
     def __init__(self):
         self.total = 0
 
-
     def bstToGst(self, root):
         if root:
             self.bstToGst(root.right)
