@@ -41,7 +41,7 @@ class Solution:
                         ny = y + dy
                         nei = nx*cols + ny
                         if 0<=nx<rows and 0<=ny<cols and grid[nx][ny]==1:
-                            if (dsu.union(current, nx*cols+ny)):
+                            if (dsu.union(current, nei)):
                                 initial_island_count-=1
         return initial_island_count
     
