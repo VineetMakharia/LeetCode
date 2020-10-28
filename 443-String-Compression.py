@@ -5,8 +5,9 @@ class Solution:
         right = 0
         while right < len(chars):
             # while the chars are same, keep on increasing the window size
-            while right < len(chars) and chars[left] == chars[right]:
+            if chars[left] == chars[right]:
                 right+=1
+                continue
             # if window size = 1, then there is only 1 single type of character \
             # thus, we do not add a count of it to after it 
             if right-left==1:
