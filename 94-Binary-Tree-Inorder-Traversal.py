@@ -10,7 +10,7 @@ class Solution:
             return []
         ans = []
         stack = []
-        cur =  root
+        cur = root
         while stack or cur:
             while cur:
                 stack.append(cur)

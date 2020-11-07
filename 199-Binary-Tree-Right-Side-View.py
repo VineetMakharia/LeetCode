@@ -5,24 +5,25 @@ class Node():
 		self.right = right
 
 class Solution:
-	def rightSideView(self, root):
-		if not root:
-			return []
-		from collections import defaultdict, deque
-		hash_map = defaultdict(list)
-		queue = deque()
-		queue.append([root,0])
-		while queue:
-			node, level = queue.popleft()
-			hash_map[level].append(node.val)
-			if node.left:
-				queue.append([node.left, level+1])
-			if node.right:
-				queue.append([node.right, level+1])
-		ans = []
-		for key, value in hash_map.items():
-			ans.append(value[-1])
-		return ans
+    def rightSideView(self, root):
+        if not root:
+            return []
+        
+        ans = []
+        from collections import deque
+        queue = deque()
+        queue.append((root))
+    
+        while queue:
+            sz = len(queue)
+            ans.append(queue[-1].val)
+            for _ in range(sz):
+                current = queue.popleft()
+                if current.left:
+                    queue.append(current.left)
+                if current.right:
+                    queue.append(current.right)
+        return ans
 
 root = Node(1)
 root.left = Node(2)
