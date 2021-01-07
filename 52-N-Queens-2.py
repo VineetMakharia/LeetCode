@@ -24,4 +24,4 @@ class Solution:
         return self.res
 
 obj = Solution()
-print(obj.totalNQueens(4))
+print(obj.totalNQueens(8))
